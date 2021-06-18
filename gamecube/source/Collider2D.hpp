@@ -6,7 +6,7 @@
 // 
 
 #pragma once
-#include "Point.hpp"
+#include "Point2D.hpp"
 #include "Dimension2D.hpp"
 
 class Collider2D final {
@@ -18,18 +18,18 @@ class Collider2D final {
         Collider2D();
         Collider2D(int w, int h);
         Collider2D(int x, int y, int w, int h);
-        Collider2D(Point p);
+        Collider2D(Point2D p);
         Collider2D(Dimension2D d);
-        Collider2D(Point p, Dimension2D d);
+        Collider2D(Point2D p, Dimension2D d);
 
         static bool collide(const Collider2D& a, const Collider2D& b);
 
         Collider2D getBounds();
-        Point getLocation();
+        Point2D getLocation();
         Dimension2D getSize();
 
         bool inside(int X, int Y);
-        bool contains(Point p);
+        bool contains(Point2D p);
 		bool contains(Collider2D c);
 		bool contains(int x, int y);
 		bool contains(int X, int Y, int W, int H);
