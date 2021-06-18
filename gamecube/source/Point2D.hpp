@@ -1,19 +1,19 @@
 //
 // NGC
-// Point.hpp
+// Point2D
 // SchumakerTam Lab.
 // Hudson Schumaker
 //
 
 #pragma once
 
-class Point final {
+class Point2D final {
     private:
         int x, y;
     
     public:
-        Point();
-        Point(int x, int y);
+        Point2D();
+        Point2D(int x, int y);
     
         void move(int x, int y);
 	    void translate(int d);
