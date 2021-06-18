@@ -1,22 +1,22 @@
 //
 // NGC
-// Dimension.hpp
+// Dimension2D
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
 
 #pragma once
 
-class Dimension final {
+class Dimension2D final {
 	private:
 		int w, h;
 
 	public:
-		Dimension();
-		Dimension(int w, int h);
+		Dimension2D();
+		Dimension2D(int w, int h);
 
-		void setDimension(Dimension d);
-		Dimension getSize();
+		void setDimension(Dimension2D d);
+		Dimension2D getSize();
 
 		void setWidth(int w) { this->w = w; };
 		int getWidth() const { return w; };
