@@ -14,7 +14,7 @@ Collider2D::Collider2D(Point2D p): x(p.getX()), y(p.getY()), w(0), h(0) {}
 Collider2D::Collider2D(Dimension2D d): x(0), y(0), w(d.getWidth()), h(d.getHeight()) {}
 Collider2D::Collider2D(Point2D p, Dimension2D d): x(p.getX()), y(p.getY()), w(d.getWidth()), h(d.getHeight()) {}
 
-static bool collide(const Collider2D& a, const Collider2D& b) {
+bool Collider2D::collide(const Collider2D& a, const Collider2D& b) {
     int pwA = a.getX() + a.getWidth();
     int pwB = b.getX() + b.getWidth();
 
