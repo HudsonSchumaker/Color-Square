@@ -54,3 +54,5 @@ unsigned long Color::getYellow() {
 }
 
 unsigned long Color::getPink() {
+    return createRGBA(255, 175, 175, 255);
+}
