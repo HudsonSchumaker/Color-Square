@@ -22,6 +22,7 @@ int main(void) {
  
     Splash splash = Splash();
     Menu menu = Menu();
+    int players = menu.loop();
        
     end();
     return 0;
