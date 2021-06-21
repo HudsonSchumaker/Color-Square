@@ -5,11 +5,11 @@
 // Hudson Schumaker
 //
 
+#include <string>
+#include "font_ttf.h"
 #include "Menu.hpp"
 #include "Color.hpp"
 #include "Canvas.hpp"
-#include "font_ttf.h"
-#include <string>
 
 #define pressA() PAD_ButtonsDown(0) & PAD_BUTTON_A
 
