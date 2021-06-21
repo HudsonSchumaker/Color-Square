@@ -11,8 +11,9 @@
 #include <asndlib.h>
 #include <mp3player.h>
 
-#include "Splash.hpp"
 #include "Menu.hpp"
+#include "Splash.hpp"
+#include "TwoPlayers.hpp"
 
 void ini();
 void end();
@@ -23,6 +24,9 @@ int main(void) {
     Splash splash = Splash();
     Menu menu = Menu();
     int players = menu.loop();
+
+    TwoPlayers tp = TwoPlayers();
+    tp.loop();
        
     end();
     return 0;
