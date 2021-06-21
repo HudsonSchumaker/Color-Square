@@ -55,17 +55,20 @@ void TwoPlayers::input() {
 void TwoPlayers::move() {
 
     if (p1dy > 18) {
-        player1.moveY(-5);
+        player1.moveY(-3);
+        return;
     } 
     if (p1dy < -18) {
-        player1.moveY(5);
+        player1.moveY(3);
+        return;
     }
 
     if (p1dx > 18) {
-        player1.moveX(5);
+        player1.moveX(3);
+        return;
     } 
-    if (p1dx < -18) {
-        player1.moveX(-5);
+    else if (p1dx < -18) {
+        player1.moveX(-3);
     }
 
     if (p2dy > 18) {
