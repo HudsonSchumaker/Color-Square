@@ -14,12 +14,12 @@ class Menu final {
         
         Menu();
         ~Menu();
+        int loop();
 
     private:
         bool start;
         int menuPos;
         void load();
         void input();
-        void loop();
         void exit();
 };
