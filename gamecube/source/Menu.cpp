@@ -17,7 +17,6 @@ Menu::Menu() {
     start = false;
     menuPos = 0;
     load();
-    loop();
 }
 
 Menu::~Menu() {
@@ -48,7 +47,7 @@ void Menu::input() {
 	}
 }
 
-void Menu::loop() {
+int Menu::loop() {
     
     while (!start) {
         input();
@@ -78,6 +77,7 @@ void Menu::loop() {
         GRRLIB_Render();
     }
     exit();
+    return menuPos;
 }
 
 void Menu::exit() {
