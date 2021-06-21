@@ -12,6 +12,7 @@
 #include <mp3player.h>
 
 #include "Splash.hpp"
+#include "Menu.hpp"
 
 void ini();
 void end();
@@ -20,6 +21,7 @@ int main(void) {
     ini();
  
     Splash splash = Splash();
+    Menu menu = Menu();
        
     end();
     return 0;
