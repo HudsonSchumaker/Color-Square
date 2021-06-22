@@ -13,8 +13,8 @@
 
 class TwoPlayers final : public Canvas {
 
-        public:
-        const static int NUMBER_SQRT = 144;
+    public:
+        const static int NUMBER_SQRT = 156;
         
         TwoPlayers();
         ~TwoPlayers();
@@ -45,4 +45,7 @@ class TwoPlayers final : public Canvas {
         GRRLIB_texImg *grey_img;
         GRRLIB_texImg *yellow_img;
         GRRLIB_ttfFont *font;
+
+        void movePlayer1();
+        void movePlayer2();
 };
