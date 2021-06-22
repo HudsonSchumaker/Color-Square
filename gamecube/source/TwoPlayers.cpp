@@ -8,6 +8,7 @@
 #include "TwoPlayers.hpp"
 #include "Color.hpp"
 #include "Point2D.hpp"
+#include "Collider2D.hpp"
 #include <mp3player.h>
 
 #include "red_square_png.h"
@@ -15,6 +16,8 @@
 #include "yellow_square_png.h"
 #include "beep_mp3.h"
 #include "font_ttf.h"
+
+#include <unistd.h>
 
 TwoPlayers::TwoPlayers() {
     load();
@@ -26,7 +29,7 @@ TwoPlayers::~TwoPlayers() {
 
 bool TwoPlayers::loop() {
 
-    int timer = 0;
+    short timer = 0;
     while(timer < 60) {
         GRRLIB_FillScreen(Color::getBlack()); 
         GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "2 Players", 32, Color::getOrange());
@@ -35,10 +38,16 @@ bool TwoPlayers::loop() {
     }
 
     while(!levelOver && !levelWon) {
+        usleep(100 * 100); 
         input(); 
+        usleep(100 * 100); 
         move();
+        usleep(100 * 100); 
         collision();
-        render(); 
+        usleep(100 * 100); 
+        render();
+        usleep(100 * 100);  
+ 
     }
     return levelWon;
 }
@@ -53,42 +62,21 @@ void TwoPlayers::input() {
 }
 
 void TwoPlayers::move() {
-
-    if (p1dy > 18) {
-        player1.moveY(-3);
-        return;
-    } 
-    if (p1dy < -18) {
-        player1.moveY(3);
-        return;
-    }
-
-    if (p1dx > 18) {
-        player1.moveX(3);
-        return;
-    } 
-    else if (p1dx < -18) {
-        player1.moveX(-3);
-    }
-
-    if (p2dy > 18) {
-        player2.moveY(-5);
-    } 
-    if (p2dy < -18) {
-        player2.moveY(5);
-    }
-
-    if (p2dx > 18) {
-        player2.moveX(5);
-    } 
-    if (p2dx < -18) {
-        player2.moveX(-5);
-    }
-
+    movePlayer1();
+    movePlayer2();
 }
 
 void TwoPlayers::collision() {
 
+    for (int i = 0; i < NUMBER_SQRT; i++) {
+        if (Collider2D::collide(player1.getBounds(), squares[i].getBounds())) {
+            squares[i].setTexture(red_img);
+        }
+
+        if (Collider2D::collide(player2.getBounds(), squares[i].getBounds())) {
+            squares[i].setTexture(yellow_img);
+        }
+    }
 }
 
 void TwoPlayers::render() {
@@ -108,6 +96,48 @@ void TwoPlayers::render() {
     GRRLIB_Render();           
 }
 
+void TwoPlayers::movePlayer1() {
+    if (p1dy > 32) {
+        player1.moveY(-32);
+        return;
+    } 
+
+    if (p1dy < -32) {
+        player1.moveY(32);
+        return;
+    }
+
+    if (p1dx > 18) {
+        player1.moveX(32);
+        return;
+    } 
+
+    if (p1dx < -18) {
+        player1.moveX(-32);
+    }
+}
+
+void TwoPlayers::movePlayer2() {
+    if (p2dy > 18) {
+        player2.moveY(-3);
+        return;
+    } 
+
+    if (p2dy < -18) {
+        player2.moveY(3);
+        return;
+    }
+
+    if (p2dx > 18) {
+        player2.moveX(3);
+        return;
+    } 
+
+    if (p2dx < -18) {
+        player2.moveX(-3);
+    }
+}
+
 void TwoPlayers::load() {
     red_img = GRRLIB_LoadTexture(red_square_png);
     grey_img = GRRLIB_LoadTexture(grey_square_png);
@@ -116,17 +146,17 @@ void TwoPlayers::load() {
 
     int s = 0;
     for (int l = 0; l < 12; l++) {
-        for (int c = 0; c < 12; c++) {
+        for (int c = 0; c < 13; c++) {
             squares[s] = Square(c * grey_img->w + 128, l * grey_img->h + 64);
             squares[s].setTexture(grey_img);
             s++;
         }
     }
 
-    player1 = Player(0, 0);
+    player1 = Player(128, 32);
     player1.setTexture(red_img);
 
-    player2 = Player(448, 0);
+    player2 = Player(512, 32);
     player2.setTexture(yellow_img);
 }
 
