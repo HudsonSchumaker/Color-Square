@@ -94,22 +94,22 @@ void TwoPlayers::render() {
 
 void TwoPlayers::movePlayer1() {
     if (p1dy > 126) {
-        player1.moveY(-1);
+        player1.moveY(-2);
         return;
     } 
 
     if (p1dy < -126) {
-        player1.moveY(1);
+        player1.moveY(2);
         return;
     }
 
     if (p1dx > 18) {
-        player1.moveX(1);
+        player1.moveX(2);
         return;
     } 
 
     if (p1dx < -18) {
-        player1.moveX(-1);
+        player1.moveX(-2);
     }
 }
 
