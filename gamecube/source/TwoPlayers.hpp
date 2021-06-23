@@ -44,8 +44,9 @@ class TwoPlayers final : public Canvas {
         GRRLIB_texImg *red_img;
         GRRLIB_texImg *grey_img;
         GRRLIB_texImg *yellow_img;
+        GRRLIB_texImg *player_1;
         GRRLIB_ttfFont *font;
-
+        
         void movePlayer1();
         void movePlayer2();
 };
