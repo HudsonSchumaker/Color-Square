@@ -44,7 +44,7 @@ bool TwoPlayers::loop() {
         move();  
         collision();
         render();
-        usleep(200);  
+        usleep(400);  
     }
     return levelWon;
 }
