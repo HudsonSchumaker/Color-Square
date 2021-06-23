@@ -38,11 +38,12 @@ bool TwoPlayers::loop() {
     }
 
     while(!levelOver && !levelWon) {
-        input(); 
-        move();  
+          
+        input();
+        move(); 
+        usleep(10 * 1000); 
         collision();
         render();
-        usleep(800);  
     }
     return levelWon;
 }
@@ -93,22 +94,22 @@ void TwoPlayers::render() {
 
 void TwoPlayers::movePlayer1() {
     if (p1dy > 126) {
-        player1.moveY(-32);
+        player1.moveY(-4);
         return;
     } 
 
     if (p1dy < -126) {
-        player1.moveY(32);
+        player1.moveY(4);
         return;
     }
 
     if (p1dx > 18) {
-        player1.moveX(32);
+        player1.moveX(4);
         return;
     } 
 
     if (p1dx < -18) {
-        player1.moveX(-32);
+        player1.moveX(-4);
     }
 }
 
