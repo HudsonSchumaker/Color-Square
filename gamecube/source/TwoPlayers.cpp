@@ -19,8 +19,6 @@
 #include "font_ttf.h"
 #include <unistd.h>
 
-int delayTime = 10*10000/25;
-
 TwoPlayers::TwoPlayers() {
     load();
 }
