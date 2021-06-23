@@ -23,6 +23,7 @@ class Player final: public Sprite {
         void move(int dx, int dy);
         void draw() override;
         void draw(float d);
+        void setPos(int dx, int dy);
 
         bool isDestroyed() const { return destroyed; };
         void setDestroyed(bool d) { this->destroyed = d; };
