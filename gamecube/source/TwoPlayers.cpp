@@ -160,6 +160,7 @@ void TwoPlayers::load() {
 
 void TwoPlayers::unload() {
     GRRLIB_FreeTexture(red_img);
+    GRRLIB_FreeTexture(player_1);
     GRRLIB_FreeTexture(grey_img);
     GRRLIB_FreeTexture(yellow_img);
     GRRLIB_FreeTTF(font);
