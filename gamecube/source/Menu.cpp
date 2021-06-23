@@ -1,11 +1,12 @@
 //
 // NGC
-// Menu.cpp
+// Menu
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
 
 #include <string>
+#include <unistd.h>
 #include "font_ttf.h"
 #include "Menu.hpp"
 #include "Color.hpp"
@@ -30,13 +31,13 @@ void Menu::input() {
     PAD_ScanPads();
 
     int dy = PAD_StickY(0);
-    if (dy > 18) {
+    if (dy > 126) {
         if (menuPos > 0) {
             menuPos--;
         }
     } 
 
-    if (dy < -18) {
+    if (dy < -126) {
         if (menuPos >= 0 && menuPos < 2) {
             menuPos++;
         }
@@ -53,17 +54,17 @@ int Menu::loop() {
         input();
        
         GRRLIB_FillScreen(Color::getBlack()); 
-        GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 150, Canvas::screenHeight/2 - 150, font, "Color Square", 72, Color::getBlue());
+        GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 150, Canvas::screenHeight/2 - 154, font, "Color Square", 72, Color::getBlue());
     
         if (menuPos == 0) {
-            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 64, font, "- 2 players - ", 16, Color::getOrange());
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 70, Canvas::screenHeight/2 + 64, font, "- 2 players - ", 18, Color::getOrange());
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 96, font, "- 3 players - ", 16, Color::getGray());
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 128, font, "- 4 players - ", 16, Color::getGray());
         }
 
         if (menuPos == 1) {
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 64, font, "- 2 players - ", 16, Color::getGray());
-            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 96, font, "- 3 players - ", 16, Color::getOrange());
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 70, Canvas::screenHeight/2 + 96, font, "- 3 players - ", 18, Color::getOrange());
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 128, font, "- 4 players - ", 16, Color::getGray());
  
         }
@@ -71,10 +72,11 @@ int Menu::loop() {
         if (menuPos == 2) {
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 64, font, "- 2 players - ", 16, Color::getGray());
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 96, font, "- 3 players - ", 16, Color::getGray());
-            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 128, font, "- 4 players - ", 16, Color::getOrange());
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 70, Canvas::screenHeight/2 + 128, font, "- 4 players - ", 18, Color::getOrange());
         }
 
         GRRLIB_Render();
+        usleep(10 * 777); 
     }
     exit();
     return menuPos;
