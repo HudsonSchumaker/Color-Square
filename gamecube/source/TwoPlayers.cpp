@@ -41,7 +41,7 @@ bool TwoPlayers::loop() {
           
         input();
         move(); 
-        usleep(10 * 1000); 
+       // usleep(10 * 1000); 
         collision();
         render();
     }
@@ -94,22 +94,22 @@ void TwoPlayers::render() {
 
 void TwoPlayers::movePlayer1() {
     if (p1dy > 126) {
-        player1.moveY(-4);
+        player1.moveY(-1);
         return;
     } 
 
     if (p1dy < -126) {
-        player1.moveY(4);
+        player1.moveY(1);
         return;
     }
 
     if (p1dx > 18) {
-        player1.moveX(4);
+        player1.moveX(1);
         return;
     } 
 
     if (p1dx < -18) {
-        player1.moveX(-4);
+        player1.moveX(-1);
     }
 }
 
