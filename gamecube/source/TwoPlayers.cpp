@@ -41,7 +41,7 @@ bool TwoPlayers::loop() {
           
         input();
         move(); 
-       // usleep(10 * 1000); 
+        usleep(10 * 100); 
         collision();
         render();
     }
