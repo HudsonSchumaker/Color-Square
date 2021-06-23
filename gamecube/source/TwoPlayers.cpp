@@ -15,6 +15,7 @@
 #include "red_player_png.h"
 #include "grey_square_png.h"
 #include "yellow_square_png.h"
+#include "yellow_player_png.h"
 #include "beep_mp3.h"
 #include "font_ttf.h"
 #include <unistd.h>
@@ -73,6 +74,11 @@ void TwoPlayers::collision() {
             squares[i].setTexture(yellow_img);
         }
     }
+
+    if (Collider2D::collide(player1.getBounds(), player2.getBounds())) {
+        player1.setPos(104, 40);
+        player2.setPos(520, 40);
+    }
 }
 
 void TwoPlayers::render() {
@@ -103,34 +109,34 @@ void TwoPlayers::movePlayer1() {
         return;
     }
 
-    if (p1dx > 18) {
+    if (p1dx > 126) {
         player1.moveX(2);
         return;
     } 
 
-    if (p1dx < -18) {
+    if (p1dx < -126) {
         player1.moveX(-2);
     }
 }
 
 void TwoPlayers::movePlayer2() {
-    if (p2dy > 18) {
-        player2.moveY(-3);
+    if (p2dy > 126) {
+        player2.moveY(-2);
         return;
     } 
 
-    if (p2dy < -18) {
-        player2.moveY(3);
+    if (p2dy < -126) {
+        player2.moveY(2);
         return;
     }
 
-    if (p2dx > 18) {
-        player2.moveX(3);
+    if (p2dx > 126) {
+        player2.moveX(2);
         return;
     } 
 
-    if (p2dx < -18) {
-        player2.moveX(-3);
+    if (p2dx < -126) {
+        player2.moveX(-2);
     }
 }
 
@@ -140,21 +146,22 @@ void TwoPlayers::load() {
     yellow_img = GRRLIB_LoadTexture(yellow_square_png);
     font = GRRLIB_LoadTTF(font_ttf, font_ttf_size);
     player_1 = GRRLIB_LoadTexture(red_player_png);
+    player_2 = GRRLIB_LoadTexture(yellow_player_png);
 
     int s = 0;
-    for (int l = 0; l < 12; l++) {
-        for (int c = 0; c < 13; c++) {
-            squares[s] = Square(c * grey_img->w + 128, l * grey_img->h + 64);
+    for (int l = 0; l < 14; l++) {
+        for (int c = 0; c < 14; c++) {
+            squares[s] = Square(c * grey_img->w + 96, l * grey_img->h + 32);
             squares[s].setTexture(grey_img);
             s++;
         }
     }
 
-    player1 = Player(136, 40);
+    player1 = Player(104, 40);
     player1.setTexture(player_1);
 
-    player2 = Player(512, 32);
-    player2.setTexture(yellow_img);
+    player2 = Player(520, 40);
+    player2.setTexture(player_2);
 }
 
 void TwoPlayers::unload() {
@@ -162,5 +169,6 @@ void TwoPlayers::unload() {
     GRRLIB_FreeTexture(player_1);
     GRRLIB_FreeTexture(grey_img);
     GRRLIB_FreeTexture(yellow_img);
+    GRRLIB_FreeTexture(player_2);
     GRRLIB_FreeTTF(font);
 }
