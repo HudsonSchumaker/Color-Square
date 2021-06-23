@@ -18,6 +18,12 @@
 #include "font_ttf.h"
 
 #include <unistd.h>
+#include <algorithm>
+#include <stdio.h>
+#include <time.h>
+
+
+int delayTime = 10*1000/25;
 
 TwoPlayers::TwoPlayers() {
     load();
@@ -38,15 +44,16 @@ bool TwoPlayers::loop() {
     }
 
     while(!levelOver && !levelWon) {
-        usleep(100 * 100); 
+        clock_t startTime, waitTime, elapsedTime;
+        startTime = clock();
         input(); 
-        usleep(100 * 100); 
-        move();
-        usleep(100 * 100); 
+        move();  
         collision();
-        usleep(100 * 100); 
         render();
-        usleep(100 * 100);  
+        startTime = clock();
+        elapsedTime = clock() - startTime;
+        waitTime = std::max((int(delayTime - elapsedTime)), 50);
+        usleep((int)waitTime);  
  
     }
     return levelWon;
