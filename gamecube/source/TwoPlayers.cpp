@@ -12,18 +12,14 @@
 #include <mp3player.h>
 
 #include "red_square_png.h"
+#include "red_player_png.h"
 #include "grey_square_png.h"
 #include "yellow_square_png.h"
 #include "beep_mp3.h"
 #include "font_ttf.h"
-
 #include <unistd.h>
-#include <algorithm>
-#include <stdio.h>
-#include <time.h>
 
-
-int delayTime = 10*1000/25;
+int delayTime = 10*10000/25;
 
 TwoPlayers::TwoPlayers() {
     load();
@@ -44,17 +40,11 @@ bool TwoPlayers::loop() {
     }
 
     while(!levelOver && !levelWon) {
-        clock_t startTime, waitTime, elapsedTime;
-        startTime = clock();
         input(); 
         move();  
         collision();
         render();
-        startTime = clock();
-        elapsedTime = clock() - startTime;
-        waitTime = std::max((int(delayTime - elapsedTime)), 50);
-        usleep((int)waitTime);  
- 
+        usleep(150);  
     }
     return levelWon;
 }
@@ -104,12 +94,12 @@ void TwoPlayers::render() {
 }
 
 void TwoPlayers::movePlayer1() {
-    if (p1dy > 32) {
+    if (p1dy > 126) {
         player1.moveY(-32);
         return;
     } 
 
-    if (p1dy < -32) {
+    if (p1dy < -126) {
         player1.moveY(32);
         return;
     }
@@ -150,6 +140,7 @@ void TwoPlayers::load() {
     grey_img = GRRLIB_LoadTexture(grey_square_png);
     yellow_img = GRRLIB_LoadTexture(yellow_square_png);
     font = GRRLIB_LoadTTF(font_ttf, font_ttf_size);
+    player_1 = GRRLIB_LoadTexture(red_player_png);
 
     int s = 0;
     for (int l = 0; l < 12; l++) {
@@ -160,8 +151,8 @@ void TwoPlayers::load() {
         }
     }
 
-    player1 = Player(128, 32);
-    player1.setTexture(red_img);
+    player1 = Player(136, 40);
+    player1.setTexture(player_1);
 
     player2 = Player(512, 32);
     player2.setTexture(yellow_img);
