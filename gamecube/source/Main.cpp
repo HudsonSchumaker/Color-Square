@@ -14,6 +14,7 @@
 #include "Menu.hpp"
 #include "Splash.hpp"
 #include "TwoPlayers.hpp"
+#include "ThreePlayers.hpp"
 
 void ini();
 void end();
@@ -25,9 +26,16 @@ int main(void) {
     Menu menu = Menu();
     int players = menu.loop();
 
-    TwoPlayers tp = TwoPlayers();
-    tp.loop();
-       
+    if (players == 0) {
+        TwoPlayers two = TwoPlayers();
+        two.loop();
+    } 
+
+    if (players == 1) {
+        ThreePlayers three = ThreePlayers();
+        three.loop();
+    }
+  
     end();
     return 0;
 }
