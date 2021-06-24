@@ -35,6 +35,9 @@ int main(void) {
         ThreePlayers three = ThreePlayers();
         three.loop();
     }
+
+    if (players == 2) {
+    }
   
     end();
     return 0;
