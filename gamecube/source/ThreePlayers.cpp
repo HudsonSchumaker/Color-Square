@@ -120,14 +120,16 @@ void ThreePlayers::render() {
 
 void ThreePlayers::movePlayer1() {
     if (p1dy > 126) {
-        //
-        player1.moveY(-2);
+        if (player1.getY < 34) {
+            player1.moveY(-2);
+        } 
         return;
     } 
 
     if (p1dy < -126) {
-        //
-        player1.moveY(2);
+        if (player1.getY < 462) {
+            player1.moveY(2);
+        }
         return;
     }
 
