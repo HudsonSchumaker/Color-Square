@@ -100,7 +100,7 @@ void TwoPlayers::render() {
 
 void TwoPlayers::movePlayer1() {
     if (p1dy > 126) {
-        if (player1.getY() > 34) {
+        if (player1.getY() > 32) {
             player1.moveY(-2);
         } 
         return;
@@ -129,7 +129,7 @@ void TwoPlayers::movePlayer1() {
 
 void TwoPlayers::movePlayer2() {
      if (p2dy > 126) {
-        if (player2.getY() > 34) {
+        if (player2.getY() > 32) {
             player2.moveY(-2);
         } 
         return;
