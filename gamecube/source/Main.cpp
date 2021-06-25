@@ -15,6 +15,7 @@
 #include "Splash.hpp"
 #include "TwoPlayers.hpp"
 #include "ThreePlayers.hpp"
+#include "FourPlayers.hpp"
 
 void ini();
 void end();
@@ -37,6 +38,8 @@ int main(void) {
     }
 
     if (players == 2) {
+        FourPlayers four = FourPlayers();
+        four.loop();
     }
   
     end();
