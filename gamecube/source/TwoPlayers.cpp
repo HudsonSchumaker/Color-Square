@@ -128,7 +128,7 @@ void TwoPlayers::movePlayer1() {
 }
 
 void TwoPlayers::movePlayer2() {
-     if (p2dy > 126) {
+    if (p2dy > 126) {
         if (player2.getY() > 32) {
             player2.moveY(-2);
         } 
