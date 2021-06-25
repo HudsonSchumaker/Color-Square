@@ -11,6 +11,7 @@
 class Square final: public Sprite {
     private:
         bool destroyed;
+        int color;
 
     public:
         Square() : Sprite(0, 0), destroyed(false) {};
