@@ -66,7 +66,7 @@ void TwoPlayers::move() {
 
 void TwoPlayers::collision() {
 
-    for (int i = 0; i < NUMBER_SQRT; i++) {
+    for (short i = 0; i < NUMBER_SQRT; i++) {
         if (Collider2D::collide(player1.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(red_img);
             squares[i].setColor((int)Square::Red);
@@ -88,7 +88,7 @@ void TwoPlayers::render() {
     GRRLIB_FillScreen(Color::getBlack()); 
     // GRRLIB_DrawImg(128, 0, back_img, 0, 1, 1, Color::getWhite());
 
-    for (int i = 0; i < NUMBER_SQRT; i++) {
+    for (short i = 0; i < NUMBER_SQRT; i++) {
         if (!squares[i].isDestroyed()) {
             squares[i].draw();
             // Draw bricks colliders
@@ -167,9 +167,9 @@ void TwoPlayers::load() {
     player_1 = GRRLIB_LoadTexture(red_player_png);
     player_2 = GRRLIB_LoadTexture(yellow_player_png);
 
-    int s = 0;
-    for (int l = 0; l < 14; l++) {
-        for (int c = 0; c < 14; c++) {
+    short s = 0;
+    for (short l = 0; l < 14; l++) {
+        for (short c = 0; c < 14; c++) {
             squares[s] = Square(c * grey_img->w + 96, l * grey_img->h + 32);
             squares[s].setTexture(grey_img);
             s++;
@@ -190,4 +190,24 @@ void TwoPlayers::unload() {
     GRRLIB_FreeTexture(yellow_img);
     GRRLIB_FreeTexture(player_2);
     GRRLIB_FreeTTF(font);
+}
+
+short TwoPlayers::result() {
+    short p1 = 0;
+    short p2 = 0;
+     for (short i = 0; i < NUMBER_SQRT; i++) {
+        if (squares[i].getColor() == 1) {
+            p1++;
+        }
+
+        if (squares[i].getColor() == 2) {
+            p2++;
+        }
+    }
+
+    if (p1 > p2) {
+        return 1;
+    } else {
+        return 2;
+    }
 }
