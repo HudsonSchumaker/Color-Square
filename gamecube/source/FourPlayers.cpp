@@ -145,85 +145,117 @@ void FourPlayers::render() {
 
 void FourPlayers::movePlayer1() {
     if (p1dy > 126) {
-        player1.moveY(-2);
+        if (player1.getY() > 32) {
+            player1.moveY(-2);
+        } 
         return;
     } 
 
     if (p1dy < -126) {
-        player1.moveY(2);
+        if (player1.getY() < 464) {
+            player1.moveY(2);
+        }
         return;
     }
 
     if (p1dx > 126) {
-        player1.moveX(2);
+        if (player1.getX() < 528) {
+            player1.moveX(2);
+        } 
         return;
     } 
 
     if (p1dx < -126) {
-        player1.moveX(-2);
+        if (player1.getX() > 97) {
+            player1.moveX(-2);
+        } 
     }
 }
 
 void FourPlayers::movePlayer2() {
     if (p2dy > 126) {
-        player2.moveY(-2);
+        if (player2.getY() > 32) {
+            player2.moveY(-2);
+        } 
         return;
     } 
 
     if (p2dy < -126) {
-        player2.moveY(2);
+        if (player2.getY() < 464) {
+            player2.moveY(2);
+        }
         return;
     }
 
     if (p2dx > 126) {
-        player2.moveX(2);
+        if (player2.getX() < 528) {
+            player2.moveX(2);
+        } 
         return;
     } 
 
     if (p2dx < -126) {
-        player2.moveX(-2);
+        if (player2.getX() > 97) {
+            player2.moveX(-2);
+        } 
     }
 }
 
 void FourPlayers::movePlayer3() {
     if (p3dy > 126) {
-        player3.moveY(-2);
+        if (player3.getY() > 32) {
+            player3.moveY(-2);
+        } 
         return;
     } 
 
     if (p3dy < -126) {
-        player3.moveY(2);
+        if (player3.getY() < 464) {
+            player3.moveY(2);
+        }
         return;
     }
 
     if (p3dx > 126) {
-        player3.moveX(2);
+        if (player3.getX() < 528) {
+            player3.moveX(2);
+        } 
         return;
     } 
 
     if (p3dx < -126) {
-        player3.moveX(-2);
+        if (player3.getX() > 97) {
+            player3.moveX(-2);
+        } 
     }
 }
 
 void FourPlayers::movePlayer4() {
     if (p4dy > 126) {
-        player4.moveY(-2);
+        if (player4.getY() > 32) {
+            player4.moveY(-2);
+        } 
         return;
     } 
 
     if (p4dy < -126) {
-        player4.moveY(2);
+        if (player4.getY() < 464) {
+            player4.moveY(2);
+        }
         return;
     }
 
     if (p4dx > 126) {
-        player4.moveX(2);
+        if (player4.getX() < 528) {
+            player4.moveX(2);
+        } 
         return;
     } 
 
     if (p4dx < -126) {
-        player4.moveX(-2);
+        if (player4.getX() > 97) {
+            player4.moveX(-2);
+        } 
     }
 }
 
