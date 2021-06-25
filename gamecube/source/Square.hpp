@@ -32,4 +32,7 @@ class Square final: public Sprite {
 
         bool isDestroyed() const { return destroyed; };
         void setDestroyed(bool d) { this->destroyed = d; };
+
+        int getColor() const  { return color; };
+        void setColor(int c) { this->color = c; };
 };
