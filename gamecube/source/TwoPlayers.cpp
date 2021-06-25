@@ -222,7 +222,9 @@ short TwoPlayers::result() {
 
     if (p1 > p2) {
         return 1;
-    } else {
+    } else if (p2 > p1) {
         return 2;
+    } else {
+        return 0;
     }
 }
