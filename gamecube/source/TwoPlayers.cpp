@@ -69,10 +69,12 @@ void TwoPlayers::collision() {
     for (int i = 0; i < NUMBER_SQRT; i++) {
         if (Collider2D::collide(player1.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(red_img);
+            squares[i].setColor((int)Square::Red);
         }
 
         if (Collider2D::collide(player2.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(yellow_img);
+            squares[i].setColor((int)Square::Yellow);
         }
     }
 
