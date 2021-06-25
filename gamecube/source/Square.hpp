@@ -14,6 +14,14 @@ class Square final: public Sprite {
         int color;
 
     public:
+        enum SquareColor {
+            Gray,
+            Red,
+            Yellow,
+            Blue,
+            Green
+        };
+
         Square() : Sprite(0, 0), destroyed(false) {};
         Square(int x, int y) : Sprite(x, y), destroyed(false) {};
         Square(int x, int y, int w, int h) : Sprite(x, y, w, h), destroyed(false) {};
