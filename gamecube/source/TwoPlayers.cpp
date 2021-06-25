@@ -38,13 +38,14 @@ bool TwoPlayers::loop() {
         timer++;
     }
 
-    while(!levelOver && !levelWon) {
-          
+    timer = 0;
+    while(timer < 6000) {
         input();
         move(); 
         usleep(10 * 100); 
         collision();
         render();
+        timer++;
     }
     return levelWon;
 }
