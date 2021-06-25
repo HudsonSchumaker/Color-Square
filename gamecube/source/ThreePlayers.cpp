@@ -177,13 +177,17 @@ void ThreePlayers::movePlayer2() {
 }
 
 void ThreePlayers::movePlayer3() {
-    if (p3dy > 126) {
-        player3.moveY(-2);
+     if (p3dy > 126) {
+        if (player3.getY() > 34) {
+            player3.moveY(-2);
+        } 
         return;
     } 
 
     if (p3dy < -126) {
-        player3.moveY(2);
+        if (player3.getY() < 464) {
+            player3.moveY(2);
+        }
         return;
     }
 
