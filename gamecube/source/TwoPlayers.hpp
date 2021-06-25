@@ -26,6 +26,7 @@ class TwoPlayers final : public Canvas {
         void render() override;
         void load() override;
         void unload() override;
+        short result();
 
     private:
         bool levelOver = false;
