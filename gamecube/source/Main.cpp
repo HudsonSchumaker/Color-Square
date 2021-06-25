@@ -24,24 +24,27 @@ int main(void) {
     ini();
  
     Splash splash = Splash();
-    Menu menu = Menu();
-    int players = menu.loop();
+    
+    for (;;) {
+        Menu menu = Menu();
+        int players = menu.loop();
 
-    if (players == 0) {
-        TwoPlayers two = TwoPlayers();
-        two.loop();
-    } 
+        if (players == 0) {
+            TwoPlayers two = TwoPlayers();
+            two.loop();
+        } 
 
-    if (players == 1) {
-        ThreePlayers three = ThreePlayers();
-        three.loop();
+        if (players == 1) {
+            ThreePlayers three = ThreePlayers();
+            three.loop();
+        }
+
+        if (players == 2) {
+            FourPlayers four = FourPlayers();
+            four.loop();
+        }
     }
-
-    if (players == 2) {
-        FourPlayers four = FourPlayers();
-        four.loop();
-    }
-  
+    
     end();
     return 0;
 }
