@@ -39,7 +39,7 @@ bool TwoPlayers::loop() {
     }
 
     timer = 0;
-    while(timer < 6000) {
+    while(timer < 1000) {
         input();
         move(); 
         usleep(10 * 100); 
@@ -47,6 +47,21 @@ bool TwoPlayers::loop() {
         render();
         timer++;
     }
+
+    timer = 0;
+    short res = result();
+    while(timer < 60) {
+        GRRLIB_FillScreen(Color::getBlack()); 
+        if (res == 1) {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 1 Win", 32, Color::getRed());
+        } else {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 2 Win", 32, Color::getYellow());
+        } 
+
+        GRRLIB_Render();
+        timer++;
+    }
+
     return levelWon;
 }
 
