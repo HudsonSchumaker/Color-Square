@@ -100,43 +100,59 @@ void TwoPlayers::render() {
 
 void TwoPlayers::movePlayer1() {
     if (p1dy > 126) {
-        player1.moveY(-2);
+        if (player1.getY() > 34) {
+            player1.moveY(-2);
+        } 
         return;
     } 
 
     if (p1dy < -126) {
-        player1.moveY(2);
+        if (player1.getY() < 464) {
+            player1.moveY(2);
+        }
         return;
     }
 
     if (p1dx > 126) {
-        player1.moveX(2);
+        if (player1.getX() < 528) {
+            player1.moveX(2);
+        } 
         return;
     } 
 
     if (p1dx < -126) {
-        player1.moveX(-2);
+        if (player1.getX() > 97) {
+            player1.moveX(-2);
+        } 
     }
 }
 
 void TwoPlayers::movePlayer2() {
-    if (p2dy > 126) {
-        player2.moveY(-2);
+     if (p2dy > 126) {
+        if (player2.getY() > 34) {
+            player2.moveY(-2);
+        } 
         return;
     } 
 
     if (p2dy < -126) {
-        player2.moveY(2);
+        if (player2.getY() < 464) {
+            player2.moveY(2);
+        }
         return;
     }
 
     if (p2dx > 126) {
-        player2.moveX(2);
+        if (player2.getX() < 528) {
+            player2.moveX(2);
+        } 
         return;
     } 
 
     if (p2dx < -126) {
-        player2.moveX(-2);
+        if (player2.getX() > 97) {
+            player2.moveX(-2);
+        } 
     }
 }
 
