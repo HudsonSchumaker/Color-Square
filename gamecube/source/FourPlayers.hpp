@@ -20,13 +20,6 @@ class FourPlayers final : public Canvas {
         ~FourPlayers();
 
         bool loop() override;
-        void input() override; 
-        void move() override;
-        void collision() override;
-        void render() override;
-        void load() override;
-        void unload() override;
-        short result();
 
     private:
         int p1dx = 0;
@@ -60,4 +53,12 @@ class FourPlayers final : public Canvas {
         void movePlayer2();
         void movePlayer3();
         void movePlayer4();
+
+        void input() override; 
+        void move() override;
+        void collision() override;
+        void render() override;
+        void load() override;
+        void unload() override;
+        short result();
 };
