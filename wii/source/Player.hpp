@@ -1,5 +1,5 @@
 // 
-// NGC
+// Wii
 // Player
 // SchumakerTeam Lab.
 // Hudson Schumaker
