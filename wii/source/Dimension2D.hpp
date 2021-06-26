@@ -1,5 +1,5 @@
 //
-// NGC
+// Wii
 // Dimension2D
 // SchumakerTeam Lab.
 // Hudson Schumaker
