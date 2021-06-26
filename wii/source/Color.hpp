@@ -1,6 +1,6 @@
   
 //
-// NGC
+// Wii
 // Color
 // SchumakerTeam Lab.
 // Hudson Schumaker
