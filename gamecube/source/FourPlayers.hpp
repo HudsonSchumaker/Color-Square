@@ -26,11 +26,9 @@ class FourPlayers final : public Canvas {
         void render() override;
         void load() override;
         void unload() override;
+        short result();
 
     private:
-        bool levelOver = false;
-        bool levelWon = false;
-
         int p1dx = 0;
         int p2dx = 0;
         int p3dx = 0;
