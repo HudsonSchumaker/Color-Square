@@ -124,13 +124,10 @@ void ThreePlayers::collision() {
 
 void ThreePlayers::render() {
     GRRLIB_FillScreen(Color::getBlack()); 
-    // GRRLIB_DrawImg(128, 0, back_img, 0, 1, 1, Color::getWhite());
 
     for (short i = 0; i < NUMBER_SQRT; i++) {
         if (!squares[i].isDestroyed()) {
             squares[i].draw();
-            // Draw bricks colliders
-            // GRRLIB_Rectangle(bricks[i].getX(),  bricks[i].getY(),  bricks[i].getWidth(),  bricks[i].getHeight(),  Color::getWhite(), false);
         }
     }
     player1.draw();
