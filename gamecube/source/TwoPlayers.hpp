@@ -20,14 +20,7 @@ class TwoPlayers final : public Canvas {
         ~TwoPlayers();
 
         bool loop() override;
-        void input() override; 
-        void move() override;
-        void collision() override;
-        void render() override;
-        void load() override;
-        void unload() override;
-        short result();
-
+        
     private:
         int p1dx = 0;
         int p2dx = 0;
@@ -48,4 +41,12 @@ class TwoPlayers final : public Canvas {
         
         void movePlayer1();
         void movePlayer2();
+
+        void input() override; 
+        void move() override;
+        void collision() override;
+        void render() override;
+        void load() override;
+        void unload() override;
+        short result();
 };
