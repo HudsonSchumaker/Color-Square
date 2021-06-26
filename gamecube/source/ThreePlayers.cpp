@@ -40,13 +40,32 @@ bool ThreePlayers::loop() {
         timer++;
     }
 
-    while(!levelOver && !levelWon) {
-          
+    timer = 0;
+    while(timer < 1000) {
         input();
         move(); 
         usleep(10 * 100); 
         collision();
         render();
+        timer++;
+    }
+
+    timer = 0;
+    short res = result();
+    while(timer < 60) {
+        GRRLIB_FillScreen(Color::getBlack()); 
+        if (res == 1) {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 1 Win", 32, Color::getRed());
+        } else if (res == 2) {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 2 Win", 32, Color::getYellow());
+        } else if (res == 3) {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 3 Win", 32, Color::getBlue());
+        } else {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "DRAW", 32, Color::getGray());
+        }
+
+        GRRLIB_Render();
+        timer++;
     }
     return levelWon;
 }
@@ -73,14 +92,17 @@ void ThreePlayers::collision() {
     for (short i = 0; i < NUMBER_SQRT; i++) {
         if (Collider2D::collide(player1.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(red_img);
+            squares[i].setColor((int)Square::Red);
         }
 
         if (Collider2D::collide(player2.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(yellow_img);
+            squares[i].setColor((int)Square::Yellow);
         }
         
         if (Collider2D::collide(player3.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(blue_img);
+            squares[i].setColor((int)Square::Blue);
         }
     }
 
@@ -245,4 +267,38 @@ void ThreePlayers::unload() {
     GRRLIB_FreeTexture(blue_img);
     GRRLIB_FreeTexture(player_3);
     GRRLIB_FreeTTF(font);
+}
+
+short ThreePlayers::result() {
+    short p1 = 0;
+    short p2 = 0;
+    short p3 = 0;
+    for (short i = 0; i < NUMBER_SQRT; i++) {
+        if (squares[i].getColor() == 1) {
+            p1++;
+        }
+
+        if (squares[i].getColor() == 2) {
+            p2++;
+        }
+
+        if (squares[i].getColor() == 3) {
+            p3++;
+        }
+    }
+
+    if (p1 > p2) {
+        if (p1 > p3) {
+            return 1;
+        } else {
+            if (p2 > p3) { 
+                return 2;
+            } else {
+                if (p3 > p2) { 
+                    return 3;
+                }  
+            }   
+        }
+    }
+    return 0;
 }
