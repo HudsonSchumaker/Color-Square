@@ -54,9 +54,11 @@ bool TwoPlayers::loop() {
         GRRLIB_FillScreen(Color::getBlack()); 
         if (res == 1) {
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 1 Win", 32, Color::getRed());
-        } else {
+        } else if (res == 2) {
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 2 Win", 32, Color::getYellow());
-        } 
+        } else {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "DRAW", 32, Color::getGray());
+        }
 
         GRRLIB_Render();
         timer++;
