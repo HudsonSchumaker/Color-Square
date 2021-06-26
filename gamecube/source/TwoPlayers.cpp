@@ -64,7 +64,7 @@ bool TwoPlayers::loop() {
         timer++;
     }
 
-    return levelWon;
+    return false;
 }
 
 void TwoPlayers::input() {
