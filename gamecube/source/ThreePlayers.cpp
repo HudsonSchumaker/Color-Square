@@ -67,7 +67,7 @@ bool ThreePlayers::loop() {
         GRRLIB_Render();
         timer++;
     }
-    return levelWon;
+    return false;
 }
 
 void ThreePlayers::input() {
