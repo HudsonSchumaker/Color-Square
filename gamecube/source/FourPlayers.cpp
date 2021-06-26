@@ -42,15 +42,18 @@ bool FourPlayers::loop() {
         timer++;
     }
 
-    while(!levelOver && !levelWon) {
-          
+    timer = 0;
+    while(timer < 1000) {
         input();
         move(); 
-        usleep(10 * 100); 
+        usleep(10 * 99); 
         collision();
         render();
+        timer++;
     }
-    return levelWon;
+
+    
+    return false;
 }
 
 void FourPlayers::input() {
@@ -126,13 +129,10 @@ void FourPlayers::collision() {
 
 void FourPlayers::render() {
     GRRLIB_FillScreen(Color::getBlack()); 
-    // GRRLIB_DrawImg(128, 0, back_img, 0, 1, 1, Color::getWhite());
 
     for (int i = 0; i < NUMBER_SQRT; i++) {
         if (!squares[i].isDestroyed()) {
             squares[i].draw();
-            // Draw bricks colliders
-            // GRRLIB_Rectangle(bricks[i].getX(),  bricks[i].getY(),  bricks[i].getWidth(),  bricks[i].getHeight(),  Color::getWhite(), false);
         }
     }
     player1.draw();
@@ -306,4 +306,43 @@ void FourPlayers::unload() {
     GRRLIB_FreeTexture(green_img);
     GRRLIB_FreeTexture(player_4);
     GRRLIB_FreeTTF(font);
+}
+
+short FourPlayers::result() {
+    short p1 = 0;
+    short p2 = 0;
+    short p3 = 0;
+    short p4 = 0;
+    for (short i = 0; i < NUMBER_SQRT; i++) {
+        if (squares[i].getColor() == 1) {
+            p1++;
+        }
+
+        if (squares[i].getColor() == 2) {
+            p2++;
+        }
+
+        if (squares[i].getColor() == 3) {
+            p3++;
+        }
+
+        if (squares[i].getColor() == 4) {
+            p4++;
+        }
+    }
+
+    if (p1 > p2) {
+        if (p1 > p3) {
+            return 1;
+        } else {
+            if (p2 > p3) { 
+                return 2;
+            } else {
+                if (p3 > p2) { 
+                    return 3;
+                }  
+            }   
+        }
+    }
+    return 0;
 }
