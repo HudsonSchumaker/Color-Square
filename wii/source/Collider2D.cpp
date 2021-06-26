@@ -1,5 +1,5 @@
 //
-// NGC
+// Wii
 // Collider2D
 // SchumakerTeam Lab.
 // Hudson Schumaker
