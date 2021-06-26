@@ -16,7 +16,6 @@
 #include "grey_square_png.h"
 #include "yellow_square_png.h"
 #include "yellow_player_png.h"
-#include "beep_mp3.h"
 #include "font_ttf.h"
 #include <unistd.h>
 
