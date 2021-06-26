@@ -18,7 +18,6 @@
 #include "yellow_player_png.h"
 #include "blue_square_png.h"
 #include "blue_player_png.h"
-#include "beep_mp3.h"
 #include "font_ttf.h"
 #include <unistd.h>
 
@@ -287,15 +286,20 @@ short ThreePlayers::result() {
     if (p1 > p2) {
         if (p1 > p3) {
             return 1;
-        } else {
-            if (p2 > p3) { 
-                return 2;
-            } else {
-                if (p3 > p2) { 
-                    return 3;
-                }  
-            }   
         }
     }
+    
+    if (p2 > p1) {
+        if (p2 > p3) {
+            return 2;
+        }
+    }
+
+    if (p3 > p1) {
+        if (p3 > p2) {
+            return 3;
+        }
+    }
+  
     return 0;
 }
