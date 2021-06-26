@@ -20,7 +20,6 @@
 #include "blue_player_png.h"
 #include "green_square_png.h"
 #include "green_player_png.h"
-#include "beep_mp3.h"
 #include "font_ttf.h"
 #include <unistd.h>
 
@@ -52,7 +51,25 @@ bool FourPlayers::loop() {
         timer++;
     }
 
-    
+    timer = 0;
+    short res = result();
+    while(timer < 60) {
+        GRRLIB_FillScreen(Color::getBlack()); 
+        if (res == 1) {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 1 Win", 32, Color::getRed());
+        } else if (res == 2) {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 2 Win", 32, Color::getYellow());
+        } else if (res == 3) {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 3 Win", 32, Color::getBlue());
+        } else if (res == 4) {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "Player 4 Win", 32, Color::getGreen());
+        } else {
+            GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 60, Canvas::screenHeight/2 -20, font, "DRAW", 32, Color::getGray());
+        }
+
+        GRRLIB_Render();
+        timer++;
+    }
     return false;
 }
 
@@ -81,18 +98,22 @@ void FourPlayers::collision() {
     for (int i = 0; i < NUMBER_SQRT; i++) {
         if (Collider2D::collide(player1.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(red_img);
+            squares[i].setColor((int)Square::Red);
         }
 
         if (Collider2D::collide(player2.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(yellow_img);
+            squares[i].setColor((int)Square::Yellow);
         }
         
         if (Collider2D::collide(player3.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(blue_img);
+            squares[i].setColor((int)Square::Blue);
         }
 
         if (Collider2D::collide(player4.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(green_img);
+            squares[i].setColor((int)Square::Green);
         }
     }
 
@@ -333,16 +354,35 @@ short FourPlayers::result() {
 
     if (p1 > p2) {
         if (p1 > p3) {
-            return 1;
-        } else {
-            if (p2 > p3) { 
-                return 2;
-            } else {
-                if (p3 > p2) { 
-                    return 3;
-                }  
-            }   
+            if (p1 > p4) {
+                return 1;
+            }
         }
     }
+    
+    if (p2 > p1) {
+        if (p2 > p3) {
+            if (p2 > p4) {
+                return 2;
+            }
+        }
+    }
+
+    if (p3 > p1) {
+        if (p3 > p2) {
+            if (p3 > p4) {
+                return 3;
+            }
+        }
+    }
+
+    if (p4 > p1) {
+        if (p4 > p2) {
+            if (p4 > p3) {
+                return 4;
+            }
+        }
+    }
+   
     return 0;
 }
