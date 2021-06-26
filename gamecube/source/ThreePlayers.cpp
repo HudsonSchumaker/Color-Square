@@ -70,7 +70,7 @@ void ThreePlayers::move() {
 
 void ThreePlayers::collision() {
 
-    for (int i = 0; i < NUMBER_SQRT; i++) {
+    for (short i = 0; i < NUMBER_SQRT; i++) {
         if (Collider2D::collide(player1.getBounds(), squares[i].getBounds())) {
             squares[i].setTexture(red_img);
         }
@@ -104,7 +104,7 @@ void ThreePlayers::render() {
     GRRLIB_FillScreen(Color::getBlack()); 
     // GRRLIB_DrawImg(128, 0, back_img, 0, 1, 1, Color::getWhite());
 
-    for (int i = 0; i < NUMBER_SQRT; i++) {
+    for (short i = 0; i < NUMBER_SQRT; i++) {
         if (!squares[i].isDestroyed()) {
             squares[i].draw();
             // Draw bricks colliders
@@ -217,9 +217,9 @@ void ThreePlayers::load() {
     player_2 = GRRLIB_LoadTexture(yellow_player_png);
     player_3 = GRRLIB_LoadTexture(blue_player_png);
 
-    int s = 0;
-    for (int l = 0; l < 14; l++) {
-        for (int c = 0; c < 14; c++) {
+    short s = 0;
+    for (short l = 0; l < 14; l++) {
+        for (short c = 0; c < 14; c++) {
             squares[s] = Square(c * grey_img->w + 96, l * grey_img->h + 32);
             squares[s].setTexture(grey_img);
             s++;
