@@ -1,5 +1,5 @@
 //
-// NGC
+// Wii
 // Point.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
