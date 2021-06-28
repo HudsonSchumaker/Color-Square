@@ -1,5 +1,5 @@
 // 
-// NGC
+// Wii
 // Sprite
 // SchumakerTeam Lab.
 // Hudson Schumaker
