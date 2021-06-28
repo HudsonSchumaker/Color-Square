@@ -1,5 +1,5 @@
 //
-// NGC
+// Wii
 // Point2D
 // SchumakerTam Lab.
 // Hudson Schumaker
