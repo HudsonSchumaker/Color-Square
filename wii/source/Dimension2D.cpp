@@ -1,6 +1,6 @@
 //
 // Wii
-// Dimension2D
+// Dimension2D.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
