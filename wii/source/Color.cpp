@@ -1,6 +1,6 @@
 //
 // Wii
-// Color
+// Color.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
