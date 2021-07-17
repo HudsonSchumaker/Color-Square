@@ -66,7 +66,6 @@ int Menu::loop() {
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 64, font, "- 2 players - ", 16, Color::getGray());
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 70, Canvas::screenHeight/2 + 96, font, "- 3 players - ", 18, Color::getOrange());
             GRRLIB_PrintfTTF(Canvas::screenWidth/2 - 66, Canvas::screenHeight/2 + 128, font, "- 4 players - ", 16, Color::getGray());
- 
         }
 
         if (menuPos == 2) {
