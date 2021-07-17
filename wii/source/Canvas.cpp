@@ -1,6 +1,6 @@
 //
 // Wii
-// Canvas
+// Canvas.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //

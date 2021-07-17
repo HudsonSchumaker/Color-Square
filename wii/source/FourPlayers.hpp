@@ -1,6 +1,6 @@
 // 
 // Wii
-// FourPlayers
+// FourPlayers.hpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
