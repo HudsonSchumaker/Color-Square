@@ -37,14 +37,14 @@ include $(DEVKITPRO)/libnx/switch_rules
 #   of a homebrew executable (.nro). This is intended to be used for sysmodules.
 #   NACP building is skipped as well.
 #---------------------------------------------------------------------------------
-TARGET		:=	Breakout-Arkanoid
+TARGET		:=	Color-Square
 BUILD		:=	build
 SOURCES		:=	source
 DATA		:=	data
 INCLUDES	:=	include
 ROMFS		:=	romfs
 
-APP_TITLE   := Breakanoid
+APP_TITLE   := ColorSquare
 APP_AUTHOR  := SchumakerTeam
 
 #---------------------------------------------------------------------------------
