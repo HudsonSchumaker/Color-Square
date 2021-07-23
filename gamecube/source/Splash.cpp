@@ -1,6 +1,6 @@
 //
 // NGC
-// Splash
+// Splash.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
