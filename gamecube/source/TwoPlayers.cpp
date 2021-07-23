@@ -1,6 +1,6 @@
 //
 // NGC
-// TwoPlayers
+// TwoPlayers.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
