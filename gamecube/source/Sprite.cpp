@@ -1,6 +1,6 @@
 // 
 // NGC
-// Sprite
+// Sprite.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
