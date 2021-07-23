@@ -1,6 +1,6 @@
 // 
 // NGC
-// Main
+// Main.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
