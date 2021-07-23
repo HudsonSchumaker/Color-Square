@@ -1,6 +1,6 @@
 // 
 // NGC
-// Player
+// Player.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
