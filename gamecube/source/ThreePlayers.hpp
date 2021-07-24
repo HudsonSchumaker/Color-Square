@@ -1,6 +1,6 @@
 // 
 // NGC
-// ThreePlayers
+// ThreePlayers.hpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
