@@ -1,6 +1,6 @@
 //
 // NGC
-// Collider2D
+// Collider2D.hpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 // 
