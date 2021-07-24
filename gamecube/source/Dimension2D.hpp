@@ -1,6 +1,6 @@
 //
 // NGC
-// Dimension2D
+// Dimension2D.hpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
