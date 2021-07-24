@@ -1,6 +1,6 @@
 //
 // NGC
-// Point2D
+// Point2D.hpp
 // SchumakerTam Lab.
 // Hudson Schumaker
 //
