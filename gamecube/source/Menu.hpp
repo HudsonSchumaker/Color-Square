@@ -1,6 +1,6 @@
 //
 // NGC
-// Menu
+// Menu.hpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
