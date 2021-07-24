@@ -1,6 +1,6 @@
 //
 // NGC
-// Square
+// Square.hpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
