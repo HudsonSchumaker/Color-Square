@@ -1,6 +1,6 @@
 // 
 // NGC
-// Sprite
+// TwoPlayers.hpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
