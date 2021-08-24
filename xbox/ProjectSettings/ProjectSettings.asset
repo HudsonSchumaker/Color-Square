@@ -21,7 +21,7 @@ PlayerSettings:
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
-  m_SplashScreenLogoStyle: 1
+  m_SplashScreenLogoStyle: 0
   m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
@@ -85,7 +85,7 @@ PlayerSettings:
   resizableWindow: 0
   useMacAppStoreValidation: 0
   macAppStoreCategory: public.app-category.games
-  gpuSkinning: 0
+  gpuSkinning: 1
   xboxPIXTextureCapture: 0
   xboxEnableAvatar: 0
   xboxEnableKinect: 0
@@ -256,7 +256,49 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: Standalone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 512
+      m_Height: 512
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 2127d89526f992d4d9f5022579e46095, type: 3}
+      m_Width: 256
+      m_Height: 256
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 64
+      m_Height: 64
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 2e927a00f6f8c6b488192ea3132f4a7b, type: 3}
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: e125478857d0d6f45ae0efa4a989785d, type: 3}
+      m_Width: 32
+      m_Height: 32
+      m_Kind: 0
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: b674702d15aeff44a81ceb54d63f9127, type: 3}
+      m_Width: 16
+      m_Height: 16
+      m_Kind: 0
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsJobs:
@@ -566,23 +608,64 @@ PlayerSettings:
   gcIncremental: 1
   assemblyVersionValidation: 1
   gcWBarrierValidation: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    WSA: 6
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 2DBuiltInRenderer
+  metroPackageName: Color-Square
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: 2D_BuiltInRenderer
-  wsaImages: {}
+  metroCertificateSubject: SchumakerTeam
+  metroCertificateIssuer: SchumakerTeam
+  metroCertificateNotAfter: 00676c6e59b7d801
+  metroApplicationDescription: Color-Square
+  wsaImages:
+    65636: Assets/Resources/green_square_50.png
+    65661: Assets/Resources/green_square_63.png
+    65686: Assets/Resources/green_square_75.png
+    65736: Assets/Resources/green_square_100.png
+    65936: Assets/Resources/green_square_200.png
+    131172: Assets/Resources/green_square_620_300.png
+    131197: Assets/Resources/green_square_775.png
+    131222: Assets/Resources/green_square_930_450.png
+    131272: Assets/Resources/green_square_1240_600.png
+    131472: Assets/Resources/green_square_2480.png
+    2031632: Assets/Resources/green_square_16.png
+    2031640: Assets/Resources/green_square_24.png
+    2031648: Assets/Resources/green_square.png
+    2031664: Assets/Resources/green_square_48.png
+    2031716: Assets/Resources/green_square_44.png
+    2031741: Assets/Resources/green_square_55.png
+    2031766: Assets/Resources/green_square_66.png
+    2031816: Assets/Resources/green_square_88.png
+    2031872: Assets/Resources/green_square_256.png
+    2032016: Assets/Resources/green_square_176.png
+    2097252: Assets/Resources/green_square_71.png
+    2097277: Assets/Resources/green_square_89.png
+    2097302: Assets/Resources/green_square_107.png
+    2097352: Assets/Resources/green_square_142.png
+    2097552: Assets/Resources/green_square_284.png
+    2162788: Assets/Resources/green_square_150.png
+    2162813: Assets/Resources/green_square_188.png
+    2162838: Assets/Resources/green_square_225.png
+    2162888: Assets/Resources/green_square_300.png
+    2163088: Assets/Resources/green_square_600.png
+    2228324: Assets/Resources/green_square_310.png
+    2228349: Assets/Resources/green_square_388.png
+    2228374: Assets/Resources/green_square_465.png
+    2228424: Assets/Resources/green_square_620.png
+    2228624: Assets/Resources/green_square_1240.png
+    2293860: Assets/Resources/green_square_310_150.png
+    2293885: Assets/Resources/green_square_388_188.png
+    2293910: Assets/Resources/green_square_465_225.png
+    2293960: Assets/Resources/green_square_620_300.png
+    2294160: Assets/Resources/green_square_1240_600.png
   metroTileShortName: ColorSquare
   metroTileShowName: 0
-  metroMediumTileShowName: 0
-  metroLargeTileShowName: 0
-  metroWideTileShowName: 0
+  metroMediumTileShowName: 1
+  metroLargeTileShowName: 1
+  metroWideTileShowName: 1
   metroSupportStreamingInstall: 0
   metroLastRequiredScene: 0
   metroDefaultTileSize: 1
@@ -591,7 +674,9 @@ PlayerSettings:
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}
   metroSplashScreenUseBackgroundColor: 0
   platformCapabilities: {}
-  metroTargetDeviceFamilies: {}
+  metroTargetDeviceFamilies:
+    Desktop: True
+    Xbox: True
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 

@@ -20,4 +20,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FourPlayers.unity
     guid: ec27dded9e3e2444b84ff4b2d53685e5
+  - enabled: 1
+    path: Assets/Scenes/Grey.unity
+    guid: a92be4cc610c16e49aa7a0a9cfef1f6f
+  - enabled: 1
+    path: Assets/Scenes/Blue.unity
+    guid: 8f7f67308cc099a4f9e29b1a1658e2b8
+  - enabled: 1
+    path: Assets/Scenes/Red.unity
+    guid: c94dfcea11916e64ea2b9519100b32b4
+  - enabled: 1
+    path: Assets/Scenes/Green.unity
+    guid: 47baf681fbad8144384c89e9fc650157
+  - enabled: 1
+    path: Assets/Scenes/Yellow.unity
+    guid: a04a5bb897b580d4cb497e003f6b5c8c
   m_configObjects: {}
