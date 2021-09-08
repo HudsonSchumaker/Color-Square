@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * SchumakerTeam 
+ * Hudson Schumaker
+ */
+
 public class BackToMenu : MonoBehaviour
 {
     private float delay = 4.0f;
