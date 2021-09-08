@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * SchumakerTeam 
+ * Hudson Schumaker
+ */
 public class ThreePlayers : MonoBehaviour
 {
     public GameObject greySquare;
