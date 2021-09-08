@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * SchumakerTeam 
+ * Hudson Schumaker
+ */
+
 public class FourPlayers : MonoBehaviour
 {
     public GameObject greySquare;
