@@ -1,5 +1,5 @@
 //
-// NGC 
+// NGC
 // Canvas.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
