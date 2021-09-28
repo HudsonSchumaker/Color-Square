@@ -2,7 +2,7 @@
 // NGC 
 // Canvas.cpp
 // SchumakerTeam Lab.
-// Hudson Schumaker 
+// Hudson Schumaker  
 //
 
 #include "Canvas.hpp"
