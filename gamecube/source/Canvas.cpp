@@ -3,7 +3,7 @@
 // Canvas.cpp
 // SchumakerTeam Lab.
 // Hudson Schumaker
-//
+// 
 
 #include "Canvas.hpp"
 
