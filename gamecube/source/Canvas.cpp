@@ -1,4 +1,4 @@
-// 
+//
 // NGC
 // Canvas.cpp
 // SchumakerTeam Lab.
