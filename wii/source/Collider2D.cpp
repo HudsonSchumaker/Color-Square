@@ -1,7 +1,7 @@
 //
 // Wii
 // Collider2D.cpp
-// SchumakerTeam Lab.
+// SchumakerTeam Lab. 
 // Hudson Schumaker
 // 
 
