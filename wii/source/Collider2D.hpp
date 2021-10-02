@@ -33,7 +33,7 @@ class Collider2D final {
 	bool contains(Collider2D c);
 	bool contains(int x, int y);
 	bool contains(int X, int Y, int W, int H);
-		bool intersects(Collider2D c);
+	bool intersects(Collider2D c);
 
         void setX(int x) { this->x = x; };
 		int getX() const { return x; };
