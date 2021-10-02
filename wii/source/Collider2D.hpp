@@ -36,7 +36,7 @@ class Collider2D final {
 	bool intersects(Collider2D c);
 
         void setX(int x) { this->x = x; };
-		int getX() const { return x; };
+	int getX() const { return x; };
 
 		void setY(int y) { this->y = y; };
 		int getY() const { return y; };
