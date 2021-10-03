@@ -1,7 +1,7 @@
 //
 // NGC
 // Color.cpp
-// SchumakerTeam Lab.
+// SchumakerTeam Lab. 
 // Hudson Schumaker
 //
 
