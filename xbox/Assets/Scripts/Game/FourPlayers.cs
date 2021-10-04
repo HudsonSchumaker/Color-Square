@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /*
- * SchumakerTeam 
+ * SchumakerTeam Lab
  * Hudson Schumaker
  */
 
