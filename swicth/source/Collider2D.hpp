@@ -30,7 +30,7 @@ class Collider2D final {
 
         bool inside(int X, int Y);
         bool contains(Point2D p);
-		bool contains(Collider2D c);
+	bool contains(Collider2D c);
 		bool contains(int x, int y);
 		bool contains(int X, int Y, int W, int H);
 		bool intersects(Collider2D c);
