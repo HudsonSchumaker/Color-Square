@@ -1,6 +1,6 @@
 //
 // NGC
-// FourPlayers.cpp
+// FourPlayers
 // SchumakerTeam Lab.
 // Hudson Schumaker
 //
