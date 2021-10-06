@@ -41,7 +41,7 @@ class Collider2D final {
 	void setY(int y) { this->y = y; };
 	int getY() const { return y; };
 
-		void setWidth(int w) { this->w = w; };
+	void setWidth(int w) { this->w = w; };
 		int getWidth() const { return w; };
 
 		void setHeight(int h) { this->h = h; };
