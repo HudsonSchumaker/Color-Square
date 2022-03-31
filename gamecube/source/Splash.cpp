@@ -5,7 +5,6 @@
 // Hudson Schumaker
 //
 
-#include <mp3player.h>
 #include "Splash.hpp"
 #include "Color.hpp"
 #include "logo_png.h"
@@ -25,7 +24,7 @@ void Splash::load() {
 }
 
 void Splash::loop() {
-    MP3Player_PlayBuffer(intro_mp3, intro_mp3_size, NULL);
+    //MP3Player_PlayBuffer(intro_mp3, intro_mp3_size, NULL);
     while (splashTimer < 180) {
         GRRLIB_FillScreen(Color::getWhite()); 
         GRRLIB_DrawImg(100, 180, logo, 0, 1, 1, Color::getWhite());
