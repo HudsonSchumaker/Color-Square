@@ -8,10 +8,10 @@
 #pragma once
 
 class Canvas {
-    private:
+private:
         int w, h;
-
-    public:
+	
+public:
         static const int screenWidth = 640;
         static const int screenHeight = 480;
         
