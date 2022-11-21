@@ -1,7 +1,7 @@
 //
 // NGC
 // Canvas
-// SchumakerTeam Lab. 
+// SchumakerLab. 
 // Hudson Schumaker
 //
 
